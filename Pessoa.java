@@ -7,9 +7,9 @@ public class Pessoa {
     private String cpf;
     private String cod;
     private String profissoes;
-    private ArrayList<String> dependestes = new ArrayList<>(); ;
+    private ArrayList<dependentes> dependestes = new ArrayList<>();
 
-    public Pessoa(String nome, String data, String cpf, String cod, String profissao, ArrayList<String> dependentes) {
+    public Pessoa(String nome, String data, String cpf, String cod, String profissao, ArrayList<dependentes> dependentes) {
         this.nome = nome;
         this.data = data;
         this.cpf = cpf;
@@ -18,6 +18,7 @@ public class Pessoa {
         this.dependestes = dependentes;
     }
     public Pessoa(){}
+    
     Random r = new Random();
     
     
@@ -54,46 +55,17 @@ public class Pessoa {
     public void setCpf(String cpf) {
         this.cpf = cpf;
     }
-    int aux;
-    public void manipulaCod(int cod){
-        String seq = "";
-        
-        if(cod < 10){
-            seq = "00"+cod;
-        }else{
-            if(cod < 100){
-                seq = "0"+cod;
-            }else{
-                seq = ""+cod;
-            }
-        }
-        cod++;
-        aux = cod;
-        setCod(seq);
-    }
     public String getCod() {
         return cod;
     }
     public void setCod(String cod) {
         this.cod = cod;
     }
-    public ArrayList<String> getDependestes() {
+    public ArrayList<dependentes> getDependestes() {
         return dependestes;
     }
-    public void setDependestes(ArrayList<String> dependestes) {
+    public void setDependestes(ArrayList<dependentes> dependestes) {
         this.dependestes = dependestes;
-    }
-    public Random getR() {
-        return r;
-    }
-    public void setR(Random r) {
-        this.r = r;
-    }
-    public int getAux() {
-        return aux;
-    }
-    public void setAux(int aux) {
-        this.aux = aux;
     }
     
 }
